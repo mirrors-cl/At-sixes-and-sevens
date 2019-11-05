@@ -4,7 +4,7 @@
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
+      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>
     </p>
     <h3>Installed CLI Plugins</h3>
     <ul>
@@ -28,6 +28,15 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
+    <el-time-select
+      v-model="value1"
+      :picker-options="{
+        start: '08:30',
+        step: '00:15',
+        end: '18:30'
+      }"
+      placeholder="选择时间">
+    </el-time-select>
   </div>
 </template>
 
@@ -37,6 +46,8 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 @Component
 export default class HelloWorld extends Vue {
   @Prop() private msg!: string;
+  //data
+  public value1:any =''
 }
 </script>
 
